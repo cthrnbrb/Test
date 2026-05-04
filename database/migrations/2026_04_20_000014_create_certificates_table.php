@@ -16,9 +16,8 @@ return new class extends Migration
             $table->foreign('partner_user_id')->references('id')->on('users')->onDelete('set null');
             $table->integer('organization_id', false, true)->nullable();
             $table->foreign('organization_id')->references('id')->on('organizations')->onDelete('set null');
-            $table->string('certificate_number', 50)->unique();
-            $table->text('file_url')->nullable();
             $table->timestamp('issued_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 
